@@ -51,7 +51,7 @@ section[id] { scroll-margin-top: 88px; }
 .creamSection { background: var(--cream); }
 .orangeSection {
   background-color: var(--orange);
-  background-image: linear-gradient(90deg, rgba(248, 103, 44, 0.04) 0%, rgba(248, 103, 44, 0.18) 38%, rgba(248, 103, 44, 0.78) 61%, rgba(248, 103, 44, 0.97) 100%), url("/precision-bg.png");
+  background-image: linear-gradient(90deg, rgba(248, 103, 44, 0.04) 0%, rgba(248, 103, 44, 0.18) 38%, rgba(248, 103, 44, 0.78) 61%, rgba(248, 103, 44, 0.97) 100%), url("/precision-bg-v2.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -341,7 +341,7 @@ section[id] { scroll-margin-top: 88px; }
   .navLinks a::after { display: none; }
   .hero { min-height: auto; background-image: linear-gradient(90deg, rgba(5, 22, 32, 0.98) 0%, rgba(5, 22, 32, 0.93) 52%, rgba(5, 22, 32, 0.7) 100%), url("/hero.png"); }
   .hero::after { display: none; }
-  .orangeSection { background-image: linear-gradient(90deg, rgba(248, 103, 44, 0.58), rgba(248, 103, 44, 0.94)), url("/precision-bg.png"); background-position: 32% center; }
+  .orangeSection { background-image: linear-gradient(90deg, rgba(248, 103, 44, 0.58), rgba(248, 103, 44, 0.94)), url("/precision-bg-v2.png"); background-position: 32% center; }
   .heroGrid, .twoCol, .problemTop, .problemBanner, .impactGrid, .distinction, .whyGrid, .aboutGrid, .securityGrid, .ctaGrid, .groupGrid { grid-template-columns: 1fr; gap: 44px; }
   .auditGrid, .competenceGrid { grid-template-columns: repeat(2, 1fr); }
   .competence:last-child { grid-column: 1 / -1; }
