@@ -203,7 +203,6 @@ export default function Home() {
           ".heroActions > *",
           ".heroTags span",
           ".heroNote",
-          ".auditVisual",
         ];
 
         gsap.set(introTargets, { willChange: "transform, opacity" });
@@ -220,13 +219,7 @@ export default function Home() {
           .from(".heroCopy", { autoAlpha: 0, y: 18, duration: 0.5 }, "-=0.42")
           .from(".heroActions > *", { autoAlpha: 0, y: 14, duration: 0.38, stagger: 0.07 }, "-=0.28")
           .from(".heroTags span", { autoAlpha: 0, y: 10, duration: 0.32, stagger: 0.045 }, "-=0.22")
-          .from(".heroNote", { autoAlpha: 0, y: 10, duration: 0.32 }, "-=0.2")
-          .from(".auditVisual", { autoAlpha: 0, x: 30, scale: 0.985, duration: 0.74 }, 0.18)
-          .from(
-            ".auditVisual .signalLine > div, .auditVisual .resultStack > div",
-            { autoAlpha: 0, y: 12, duration: 0.32, stagger: 0.045 },
-            "-=0.42",
-          );
+          .from(".heroNote", { autoAlpha: 0, y: 10, duration: 0.32 }, "-=0.2");
 
         gsap.utils.toArray<HTMLElement>(".section > .container", root).forEach((section) => {
           const items = Array.from(section.children);
@@ -246,19 +239,6 @@ export default function Home() {
             onStart: () => gsap.set(items, { willChange: "transform, opacity" }),
             onComplete: () => gsap.set(items, { clearProps: "willChange" }),
           });
-        });
-
-        gsap.to(".symbolWatermark", {
-          y: -16,
-          rotation: 4,
-          scale: 1.035,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".hero",
-            start: "top top",
-            end: "bottom top",
-            scrub: 0.5,
-          },
         });
 
         const interactive = gsap.utils.toArray<HTMLElement>(
@@ -378,21 +358,6 @@ export default function Home() {
                 <span>Encontramos.</span><span>Demonstramos.</span><span>Comprovamos.</span><span>E buscamos recuperar.</span>
               </div>
               <p className="heroNote">Você não precisa saber se existe uma divergência. É justamente isso que vamos descobrir.</p>
-            </div>
-
-            <div className="auditVisual" aria-label="Resumo visual da auditoria de até cinco anos">
-              <img className="symbolWatermark" src="/symbol-conteii-orange.png" alt="" />
-              <span className="visualKicker">Histórico da operação</span>
-              <div className="five">5 <span>anos</span></div>
-              <p className="visualSub">Até 5 anos de operações auditadas.</p>
-              <div className="signalLine">
-                <div><b>01</b>Venda</div><div><b>02</b>Adquirente</div><div><b>03</b>Liquidações</div><div><b>04</b>Banco</div>
-              </div>
-              <div className="resultStack">
-                <div>O que deveria ter acontecido</div>
-                <div>O que efetivamente aconteceu</div>
-                <div>Divergências sustentadas pelos dados</div>
-              </div>
             </div>
           </div>
         </section>
