@@ -305,10 +305,10 @@ section[id] { scroll-margin-top: 88px; }
 .aboutMark::before { content: ""; position: absolute; inset: 28px; border: 1px solid rgba(255,255,255,.28); border-radius: 24px; }
 .mission { margin-top: 28px; padding: 24px; border-radius: 16px; background: var(--cream); font-size: 20px; font-weight: 700; }
 
-.securityGrid { display: grid; grid-template-columns: 0.75fr 1.25fr; gap: 70px; align-items: center; }
-.securityLock { width: 190px; height: 150px; margin: 70px auto 0; border: 6px solid var(--orange); border-radius: 24px; position: relative; }
-.securityLock::before { content: ""; position: absolute; width: 84px; height: 80px; left: 47px; top: -72px; border: 6px solid var(--orange); border-bottom: 0; border-radius: 50px 50px 0 0; }
-.securityLock::after { content: "•"; position: absolute; inset: 0; display: grid; place-items: center; color: var(--orange); font-size: 70px; line-height: 1; }
+.securityContent { display: flex; justify-content: center; text-align: center; }
+.securityContent > div { width: min(100%, 840px); }
+.securityContent .eyebrow { justify-content: center; }
+.securityContent .lead { max-width: 720px; margin-inline: auto; }
 
 .faq { margin-top: 42px; border-top: 1px solid var(--line); }
 .faq details { border-bottom: 1px solid var(--line); }
@@ -361,7 +361,7 @@ section[id] { scroll-margin-top: 88px; }
   .hero { min-height: auto; background-image: linear-gradient(90deg, rgba(5, 22, 32, 0.98) 0%, rgba(5, 22, 32, 0.93) 52%, rgba(5, 22, 32, 0.7) 100%), url("/hero.png"); }
   .hero::after { display: none; }
   .orangeSection { background-image: linear-gradient(90deg, rgba(248, 103, 44, 0.58), rgba(248, 103, 44, 0.94)), url("/precision-bg-v2.png"); background-position: 32% center; }
-  .heroGrid, .twoCol, .problemTop, .problemBanner, .impactGrid, .distinction, .whyGrid, .aboutGrid, .securityGrid, .ctaGrid, .groupGrid { grid-template-columns: 1fr; gap: 44px; }
+  .heroGrid, .twoCol, .problemTop, .problemBanner, .impactGrid, .distinction, .whyGrid, .aboutGrid, .ctaGrid, .groupGrid { grid-template-columns: 1fr; gap: 44px; }
   .auditGrid, .competenceGrid { grid-template-columns: repeat(2, 1fr); }
   .competence:last-child { grid-column: 1 / -1; }
   .audienceGrid { grid-template-columns: repeat(2, 1fr); }

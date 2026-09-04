@@ -656,8 +656,7 @@ export default function Home() {
         </section>
 
         <section className="section darkSection">
-          <div className="container securityGrid">
-            <div><div className="securityLock" aria-hidden="true" /></div>
+          <div className="container securityContent">
             <div>
               <span className="eyebrow">Segurança e confidencialidade</span>
               <h2 className="titleLg">Estamos lidando com informações financeiras da sua empresa.</h2>
