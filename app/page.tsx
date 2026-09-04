@@ -299,7 +299,7 @@ export default function Home() {
           scrollTrigger: {
             trigger: processSection,
             start: "top top",
-            end: () => `+=${Math.max(0, 1300 - processPin.offsetHeight)}`,
+            end: "+=1300",
             pin: processPin,
             pinSpacing: true,
             scrub: 0.45,
@@ -326,7 +326,7 @@ export default function Home() {
             }, "<");
         });
 
-        processTimeline.to({}, { duration: 1.6 });
+        processTimeline.to({}, { duration: 0.8 });
 
         return () => {
           gsap.set([...processCards, processTrack], { clearProps: "all" });
