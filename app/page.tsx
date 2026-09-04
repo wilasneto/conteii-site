@@ -544,7 +544,7 @@ export default function Home() {
         </section>
 
         <section className="section">
-          <div className="container twoCol alignCenter">
+          <div className="container repeatContent">
             <div>
               <span className="eyebrow">Uma pequena divergência pode não ser pequena</span>
               <h2 className="titleLg">O problema é a repetição.</h2>
@@ -553,7 +553,6 @@ export default function Home() {
               <h3 className="titleMd accent spacedTop">Quando uma divergência se repete, o impacto se acumula.</h3>
               <p><strong>Por isso analisamos histórico. Não apenas o mês passado.</strong></p>
             </div>
-            <div className="repeatVisual"><div className="curve" /><span>Impacto acumulado</span></div>
           </div>
         </section>
 

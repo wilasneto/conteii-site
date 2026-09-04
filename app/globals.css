@@ -261,10 +261,10 @@ section[id] { scroll-margin-top: 88px; }
 .distinctionCard:nth-child(5) p { color: #c4cdd1; }
 .distinctionNote { margin-top: 28px; padding: 20px; border-radius: 16px; background: var(--orange); color: white; font-size: 21px; font-weight: 800; }
 
-.repeatVisual { position: relative; min-height: 460px; border-radius: 30px; overflow: hidden; background: var(--ink); }
-.repeatVisual::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(248,103,44,.85) 0 3px, transparent 4px); background-size: 32px 32px; opacity: .45; }
-.repeatVisual .curve { position: absolute; left: 44px; right: 44px; bottom: 87px; height: 220px; border-top: 8px solid var(--orange); border-radius: 100% 0 0 0; transform: rotate(-13deg); }
-.repeatVisual span { position: absolute; left: 42px; bottom: 40px; color: white; font-size: 14px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+.repeatContent { display: flex; justify-content: center; text-align: center; }
+.repeatContent > div { width: min(100%, 820px); }
+.repeatContent .eyebrow { justify-content: center; }
+.repeatContent .lead { max-width: 680px; margin-inline: auto; }
 
 .recoveryList { counter-reset: recovery; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
 .recoveryItem { counter-increment: recovery; padding: 24px; border: 1px solid rgba(255,255,255,.14); border-radius: 18px; background: rgba(255,255,255,.05); color: #d9e0e3; }
@@ -403,7 +403,6 @@ section[id] { scroll-margin-top: 88px; }
   .documentList { gap: 5px; }
   .reportList { grid-template-columns: 1fr; }
   .reportTop { align-items: flex-start; flex-direction: column; }
-  .repeatVisual { min-height: 340px; }
   .aboutMark { min-height: 360px; }
   .aboutMark img { width: 230px; }
   .question { font-size: 43px; }
