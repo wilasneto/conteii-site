@@ -282,9 +282,9 @@ export default function Home() {
           scrollTrigger: {
             trigger: processSection,
             start: "top top",
-            end: () => `+=${cardsToReveal.length * Math.max(window.innerHeight * 0.17, 150)}`,
+            end: () => `+=${cardsToReveal.length * Math.max(window.innerHeight * 0.17, 150) + Math.max(window.innerHeight * 0.45, 320)}`,
             pin: processPin,
-            pinSpacing: false,
+            pinSpacing: true,
             scrub: 0.45,
             anticipatePin: 1,
             invalidateOnRefresh: true,
@@ -308,6 +308,8 @@ export default function Home() {
               ease: "power1.inOut",
             }, "<");
         });
+
+        processTimeline.to({}, { duration: 1.6 });
 
         return () => {
           gsap.set([...processCards, processTrack], { clearProps: "all" });
