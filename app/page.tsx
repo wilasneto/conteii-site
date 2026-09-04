@@ -363,13 +363,13 @@ export default function Home() {
         </section>
 
         <section className="section" id="problema">
-          <div className="container twoCol">
-            <div>
-              <span className="eyebrow">O problema</span>
-              <h2 className="problemTitle">Você sabe quanto sua empresa vendeu. <span>Mas sabe se recebeu exatamente como deveria?</span></h2>
-              <p className="lead">Entre uma venda realizada no cartão e o dinheiro chegar à conta da empresa existe uma série de movimentações.</p>
-            </div>
-            <div>
+          <div className="container problemLayout">
+            <div className="problemTop">
+              <div className="problemIntro">
+                <span className="eyebrow">O problema</span>
+                <h2 className="problemTitle">Você sabe quanto sua empresa vendeu. <span>Mas sabe se recebeu exatamente como deveria?</span></h2>
+                <p className="lead">Entre uma venda realizada no cartão e o dinheiro chegar à conta da empresa existe uma série de movimentações.</p>
+              </div>
               <div className="moneyPath">
                 {[
                   ["Venda", "origem"], ["Adquirente", "processamento"], ["Taxas e condições comerciais", "contrato"],
@@ -377,9 +377,13 @@ export default function Home() {
                   ["Liquidações", "pagamento"], ["Banco", "conciliação"], ["Dinheiro na conta", "resultado"],
                 ].map(([label, tag]) => <div className="moneyStep" key={label}><span>{label}</span><small>{tag}</small></div>)}
               </div>
-              <h3 className="titleMd spacedTop">A Conteii audita esse caminho.</h3>
-              <p>Uma operação pode estar correta na venda e ainda apresentar divergências posteriormente em taxas, antecipações, gravames, cobranças ou liquidações.</p>
-              <p className="muted">O relatório real analisado pela Conteii contempla diferentes frentes, incluindo arquivos de venda, gravames, antecipações, POS, chargebacks e conciliação bancária.</p>
+            </div>
+            <div className="problemBanner">
+              <h3 className="titleMd">A Conteii audita esse caminho.</h3>
+              <div className="problemBannerCopy">
+                <p>Uma operação pode estar correta na venda e ainda apresentar divergências posteriormente em taxas, antecipações, gravames, cobranças ou liquidações.</p>
+                <p>O relatório real analisado pela Conteii contempla diferentes frentes, incluindo arquivos de venda, gravames, antecipações, POS, chargebacks e conciliação bancária.</p>
+              </div>
             </div>
           </div>
         </section>

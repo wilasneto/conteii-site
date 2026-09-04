@@ -170,6 +170,8 @@ section[id] { scroll-margin-top: 88px; }
 .heroNote { max-width: 430px; margin-top: 26px; padding-left: 14px; border-left: 3px solid var(--orange); color: #d8dee0; font-size: 12px; }
 
 .twoCol { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.problemTop { display: grid; grid-template-columns: 0.86fr 1.14fr; gap: 76px; align-items: start; }
+.problemIntro { max-width: 510px; }
 .problemTitle { font-size: clamp(42px, 4.6vw, 68px); line-height: 1.03; letter-spacing: -0.05em; }
 .problemTitle span { display: block; color: var(--orange); }
 .moneyPath { position: relative; padding-left: 36px; }
@@ -177,6 +179,10 @@ section[id] { scroll-margin-top: 88px; }
 .moneyStep { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 60px; padding: 10px 16px; margin-bottom: 8px; border: 1px solid var(--line); border-radius: 14px; background: white; font-weight: 700; }
 .moneyStep::before { content: ""; position: absolute; left: -34px; width: 14px; height: 14px; border: 4px solid white; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 1px var(--orange); }
 .moneyStep small { color: var(--slate); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
+.problemBanner { margin-top: 48px; padding: 46px 54px; display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 70px; align-items: center; border-radius: 28px; background: var(--orange); color: white; }
+.problemBanner .titleMd { max-width: 330px; margin: 0; color: white; }
+.problemBannerCopy { display: grid; gap: 14px; }
+.problemBannerCopy p { margin: 0; color: rgba(255, 255, 255, 0.94); }
 
 .statement { padding: 54px; border-radius: 30px; background: var(--ink); color: white; box-shadow: 0 24px 70px rgba(13,27,36,.15); }
 .statement p { color: #c5ced2; }
@@ -330,7 +336,7 @@ section[id] { scroll-margin-top: 88px; }
   .navLinks a::after { display: none; }
   .hero { min-height: auto; background-image: linear-gradient(90deg, rgba(5, 22, 32, 0.98) 0%, rgba(5, 22, 32, 0.93) 52%, rgba(5, 22, 32, 0.7) 100%), url("/hero.png"); }
   .hero::after { display: none; }
-  .heroGrid, .twoCol, .impactGrid, .distinction, .whyGrid, .aboutGrid, .securityGrid, .ctaGrid, .groupGrid { grid-template-columns: 1fr; gap: 44px; }
+  .heroGrid, .twoCol, .problemTop, .problemBanner, .impactGrid, .distinction, .whyGrid, .aboutGrid, .securityGrid, .ctaGrid, .groupGrid { grid-template-columns: 1fr; gap: 44px; }
   .auditGrid, .competenceGrid { grid-template-columns: repeat(2, 1fr); }
   .competence:last-child { grid-column: 1 / -1; }
   .audienceGrid { grid-template-columns: repeat(2, 1fr); }
@@ -361,7 +367,7 @@ section[id] { scroll-margin-top: 88px; }
   .titleLg { font-size: 40px; }
   .lead { font-size: 19px; }
   .problemTitle { font-size: 43px; }
-  .statement, .questionBlock, .formShell { padding: 28px; }
+  .statement, .questionBlock, .formShell, .problemBanner { padding: 28px; }
   .dataRule, .auditGrid, .impactLines, .recoveryList, .audienceGrid, .competenceGrid, .answerSplit, .fields, .footerGrid { grid-template-columns: 1fr; }
   .competence:last-child, .footerGrid > :first-child, .fieldWide { grid-column: auto; }
   .auditCard { min-height: auto; }
