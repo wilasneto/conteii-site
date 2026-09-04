@@ -224,8 +224,8 @@ section[id] { scroll-margin-top: 88px; }
 .statusFlow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 25px; }
 .statusFlow span { padding: 13px 8px; border: 1px solid rgba(13,27,36,.14); border-radius: 12px; background: white; text-align: center; font-size: 11px; font-weight: 800; line-height: 1.25; }
 
-.processSection { padding: 0; overflow: visible; }
-.processPin { min-height: 100svh; padding: 34px 0; display: grid; grid-template-rows: auto minmax(0, 1fr); align-content: center; }
+.processSection { z-index: 2; padding: 0; overflow: visible; background: var(--mist); }
+.processPin { position: relative; z-index: 2; min-height: 100svh; padding: 34px 0; display: grid; grid-template-rows: auto minmax(0, 1fr); align-content: center; background: var(--mist); }
 .processHeading { max-width: 760px; }
 .processHeading .titleLg { max-width: 700px; font-size: clamp(42px, 4vw, 58px); }
 .processViewport { height: calc(100svh - 205px); min-height: 490px; max-height: 640px; margin-top: 22px; padding: 2px; overflow: hidden; }

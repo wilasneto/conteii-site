@@ -284,7 +284,7 @@ export default function Home() {
             start: "top top",
             end: () => `+=${cardsToReveal.length * Math.max(window.innerHeight * 0.17, 150) + Math.max(window.innerHeight * 0.45, 320) - 500}`,
             pin: processPin,
-            pinSpacing: true,
+            pinSpacing: false,
             scrub: 0.45,
             anticipatePin: 1,
             invalidateOnRefresh: true,
