@@ -275,7 +275,7 @@ export default function Home() {
         if (!processSection || !processPin || !processTrack || processCards.length <= 3) return;
 
         const cardsToReveal = processCards.slice(3);
-        gsap.set(cardsToReveal, { autoAlpha: 0, y: 34, scale: 0.985 });
+        gsap.set(cardsToReveal, { autoAlpha: 0, y: 28 });
         gsap.set(processTrack, { willChange: "transform" });
 
         const processTimeline = gsap.timeline({
@@ -303,10 +303,9 @@ export default function Home() {
             .to(card, {
               autoAlpha: 1,
               y: 0,
-              scale: 1,
-              duration: 0.72,
-              ease: "power2.out",
-            }, "<0.16");
+              duration: 1,
+              ease: "power1.inOut",
+            }, "<");
         });
 
         return () => {
