@@ -148,6 +148,23 @@ const audiences = [
   "Outras operações com grande volume de recebíveis",
 ];
 
+const audienceIcons = [
+  <><path d="M6 8h12l1 12H5L6 8Z" /><path d="M9 8V6a3 3 0 0 1 6 0v2" /></>,
+  <><path d="M9 3h6v5h5v6h-5v5H9v-5H4V8h5V3Z" /></>,
+  <><path d="M3 4h2l2.2 10h9.9l2-7H6" /><circle cx="9" cy="19" r="1.5" /><circle cx="17" cy="19" r="1.5" /></>,
+  <><path d="M4 10h16l-2-6H6l-2 6Z" /><path d="M5 10v10h14V10M9 20v-6h6v6" /><path d="M4 10c0 2 3 2 4 0 1 2 3 2 4 0 1 2 3 2 4 0 1 2 4 2 4 0" /></>,
+  <><path d="M12 20S4 15.4 4 9a4 4 0 0 1 7-2.6L12 8l1-1.6A4 4 0 0 1 20 9c0 6.4-8 11-8 11Z" /><path d="M8 12h2l1-3 2 6 1-3h2" /></>,
+  <><path d="M7 3v8M4 3v5a3 3 0 0 0 6 0V3M7 11v10M16 3v18M16 3c3 2 4 5 4 8h-4" /></>,
+  <><circle cx="8" cy="7" r="2" /><circle cx="16" cy="7" r="2" /><circle cx="5" cy="12" r="2" /><circle cx="19" cy="12" r="2" /><path d="M8 18c0-3 2-5 4-5s4 2 4 5c0 2-2 3-4 2-2 1-4 0-4-2Z" /></>,
+  <><rect x="3" y="4" width="18" height="13" rx="2" /><path d="M8 21h8M12 17v4" /><path d="M8 8h8l-1 5H9L8 8ZM8 8 7 6" /></>,
+  <><path d="M4 21V8l5-3v16M9 21V3l7 3v15M16 21v-9l4 2v7M2 21h20" /><path d="M12 8h1M12 12h1M12 16h1" /></>,
+  <><circle cx="8" cy="8" r="4" /><circle cx="16" cy="16" r="4" /><path d="M8 6v4M6 8h4M14 16h4M4 20 20 4" /></>,
+];
+
+function AudienceIcon({ index }: { index: number }) {
+  return <span className="audienceIcon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">{audienceIcons[index]}</svg></span>;
+}
+
 const competences = [
   ["Tecnologia", "Organização e cruzamento de grandes volumes de informações."],
   ["Inteligência financeira", "Análise das transações, recebíveis, taxas, antecipações e movimentações financeiras."],
@@ -574,7 +591,7 @@ export default function Home() {
             <span className="eyebrow">Para quem é a Conteii</span>
             <h2 className="titleLg">Quanto maior sua operação com cartões, maior a quantidade de informações que precisam ser conferidas.</h2>
             <p className="lead">A Conteii é especialmente indicada para empresas com alto volume de vendas em cartões, múltiplos CNPJs, múltiplas unidades, mais de uma adquirente, antecipação de recebíveis, operações parceladas e histórico relevante de transações.</p>
-            <div className="audienceGrid">{audiences.map((audience) => <div className="audienceCard" key={audience}>{audience}</div>)}</div>
+            <div className="audienceGrid">{audiences.map((audience, index) => <div className="audienceCard" key={audience}><AudienceIcon index={index} /><span>{audience}</span></div>)}</div>
             <a className="button spacedTop" href="#contato">Quero auditar minha operação</a>
           </div>
         </section>
