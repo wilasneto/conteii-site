@@ -144,15 +144,15 @@ section[id] { scroll-margin-top: 88px; }
   background-repeat: no-repeat;
   color: white;
 }
-.heroGrid { display: grid; grid-template-columns: minmax(0, 760px); }
-.hero h1 { max-width: 730px; margin-bottom: 28px; font-size: clamp(48px, 5.25vw, 76px); line-height: 1.02; letter-spacing: -0.052em; }
+.heroGrid { width: min(870px, calc(100% - 48px)); display: grid; grid-template-columns: minmax(0, 430px); }
+.hero h1 { max-width: 430px; margin-bottom: 24px; font-size: clamp(44px, 4.1vw, 58px); line-height: 1.03; letter-spacing: -0.052em; }
 .hero h1 strong { color: var(--orange); }
-.heroCopy { max-width: 690px; color: #c8d0d4; font-size: 20px; }
-.heroActions { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; margin: 32px 0; }
-.heroActions .muted { max-width: 310px; color: #aebbc1; font-size: 14px; }
+.heroCopy { max-width: 430px; color: #c8d0d4; font-size: 16px; }
+.heroActions { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin: 26px 0; }
+.heroActions .muted { max-width: 190px; color: #aebbc1; font-size: 11px; }
 .heroTags { display: flex; flex-wrap: wrap; gap: 10px; }
 .heroTags span { padding: 9px 13px; border: 1px solid rgba(255, 255, 255, 0.19); border-radius: 999px; color: #e9eff1; font-size: 13px; }
-.heroNote { max-width: 580px; margin-top: 38px; padding-left: 18px; border-left: 3px solid var(--orange); color: #d8dee0; font-size: 15px; }
+.heroNote { max-width: 430px; margin-top: 26px; padding-left: 14px; border-left: 3px solid var(--orange); color: #d8dee0; font-size: 12px; }
 
 .twoCol { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
 .problemTitle { font-size: clamp(42px, 4.6vw, 68px); line-height: 1.03; letter-spacing: -0.05em; }
@@ -314,6 +314,7 @@ section[id] { scroll-margin-top: 88px; }
   .navLinks a { padding: 15px 24px; border-top: 1px solid rgba(255,255,255,.08); }
   .navLinks a::after { display: none; }
   .hero { min-height: auto; }
+  .heroGrid { width: min(var(--max), calc(100% - 48px)); }
   .heroGrid, .twoCol, .impactGrid, .distinction, .whyGrid, .aboutGrid, .securityGrid, .ctaGrid, .groupGrid { grid-template-columns: 1fr; gap: 44px; }
   .auditGrid, .competenceGrid { grid-template-columns: repeat(2, 1fr); }
   .competence:last-child { grid-column: 1 / -1; }
@@ -336,6 +337,7 @@ section[id] { scroll-margin-top: 88px; }
   .menuButton { order: 3; width: 40px; height: 40px; }
   .hero { padding: 68px 0; }
   .hero { background-position: 58% center; }
+  .heroGrid { width: min(100% - 34px, var(--max)); }
   .hero h1 { font-size: 45px; }
   .heroCopy { font-size: 18px; }
   .heroActions { align-items: stretch; flex-direction: column; }
