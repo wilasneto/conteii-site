@@ -301,7 +301,7 @@ export default function Home() {
             start: "top top",
             end: "+=1300",
             pin: processPin,
-            pinSpacing: false,
+            pinSpacing: true,
             scrub: 0.45,
             anticipatePin: 1,
             invalidateOnRefresh: true,
