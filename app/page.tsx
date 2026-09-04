@@ -262,6 +262,18 @@ export default function Home() {
           ".button:not(.nonInteractive), .navCta",
           root,
         );
+
+        gsap.to(".securityTitle", {
+          color: "#f8672c",
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".securityContent",
+            start: "top 72%",
+            end: "center 38%",
+            scrub: 0.6,
+          },
+        });
+
         const removeInteractions = interactive.map((element) => {
           const lift = () => gsap.to(element, { y: -2, scale: 1.012, duration: 0.18, ease: "power2.out", overwrite: "auto" });
           const settle = () => gsap.to(element, { y: 0, scale: 1, duration: 0.24, ease: "power2.out", overwrite: "auto" });
@@ -659,7 +671,7 @@ export default function Home() {
           <div className="container securityContent">
             <div>
               <span className="eyebrow">Segurança e confidencialidade</span>
-              <h2 className="titleLg">Estamos lidando com informações financeiras da sua empresa.</h2>
+              <h2 className="titleLg securityTitle">Estamos lidando com informações financeiras da sua empresa.</h2>
               <p className="lead muted">Por isso, confidencialidade e responsabilidade no tratamento dos dados fazem parte do processo.</p>
               <p className="muted">Os relatórios e documentos são tratados respeitando as regras aplicáveis de proteção de dados e as condições estabelecidas com cada cliente.</p>
               <p className="muted">O relatório real utilizado como referência possui versão anonimizada, preservando os números e conclusões ao mesmo tempo em que restringe informações de identificação empresarial e bancária.</p>
