@@ -423,8 +423,7 @@ export default function Home() {
 
         <section className="section orangeSection">
           <div className="container impactGrid">
-            <div className="impactMark"><img src="/symbol-conteii-orange.png" alt="" /></div>
-            <div>
+            <div className="impactContent">
               <span className="eyebrow">Precisão antes da recuperação</span>
               <h2 className="titleXl">A Conteii não procura um erro.</h2>
               <h3 className="titleMd">Ela reconstrói o que aconteceu com o seu dinheiro.</h3>
