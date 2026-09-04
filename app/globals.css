@@ -224,6 +224,14 @@ section[id] { scroll-margin-top: 88px; }
 .statusFlow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 25px; }
 .statusFlow span { padding: 13px 8px; border: 1px solid rgba(13,27,36,.14); border-radius: 12px; background: white; text-align: center; font-size: 11px; font-weight: 800; line-height: 1.25; }
 
+.processSection { padding: 0; overflow: visible; }
+.processPin { min-height: 100svh; padding: 58px 0; display: grid; grid-template-rows: auto minmax(0, 1fr); align-content: center; }
+.processHeading { max-width: 760px; }
+.processHeading .titleLg { max-width: 700px; }
+.processViewport { height: min(61vh, 610px); margin-top: 34px; padding: 2px; overflow: hidden; }
+.processTrack { margin-top: 0; padding-bottom: 2px; }
+.processStep { min-height: 126px; transform-origin: 50% 100%; }
+
 .reportShell { border: 1px solid rgba(255,255,255,.13); border-radius: 30px; overflow: hidden; background: rgba(255,255,255,.045); }
 .reportTop { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 22px 26px; border-bottom: 1px solid rgba(255,255,255,.12); }
 .reportTop strong { font-size: 15px; }
@@ -347,6 +355,10 @@ section[id] { scroll-margin-top: 88px; }
   .competence:last-child { grid-column: 1 / -1; }
   .audienceGrid { grid-template-columns: repeat(2, 1fr); }
   .statusFlow { grid-template-columns: 1fr; }
+  .processSection { padding: 82px 0; overflow: hidden; }
+  .processPin { min-height: auto; padding: 0; display: block; }
+  .processViewport { height: auto; margin-top: 0; padding: 0; overflow: visible; }
+  .processTrack { margin-top: 50px; }
   .reportBody { grid-template-columns: 1fr; }
   .reportAxis { border-left: 0; border-top: 1px solid rgba(255,255,255,.12); }
   .footerGrid { grid-template-columns: 1fr 1fr; }

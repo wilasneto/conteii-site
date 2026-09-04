@@ -221,7 +221,7 @@ export default function Home() {
           .from(".heroTags span", { autoAlpha: 0, y: 10, duration: 0.32, stagger: 0.045 }, "-=0.22")
           .from(".heroNote", { autoAlpha: 0, y: 10, duration: 0.32 }, "-=0.2");
 
-        gsap.utils.toArray<HTMLElement>(".section > .container", root).forEach((section) => {
+        gsap.utils.toArray<HTMLElement>(".section > .container:not(.processPin)", root).forEach((section) => {
           const items = Array.from(section.children);
           if (!items.length) return;
 
@@ -264,6 +264,54 @@ export default function Home() {
         });
 
         return () => removeInteractions.forEach((remove) => remove());
+      }, root);
+
+      media.add("(min-width: 901px) and (prefers-reduced-motion: no-preference)", () => {
+        const processSection = root.querySelector<HTMLElement>(".processSection");
+        const processPin = root.querySelector<HTMLElement>(".processPin");
+        const processTrack = root.querySelector<HTMLElement>(".processTrack");
+        const processCards = gsap.utils.toArray<HTMLElement>(".processStep", root);
+
+        if (!processSection || !processPin || !processTrack || processCards.length <= 3) return;
+
+        const cardsToReveal = processCards.slice(3);
+        gsap.set(cardsToReveal, { autoAlpha: 0, y: 34, scale: 0.985 });
+        gsap.set(processTrack, { willChange: "transform" });
+
+        const processTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: processSection,
+            start: "top top",
+            end: () => `+=${cardsToReveal.length * Math.max(window.innerHeight * 0.58, 460)}`,
+            pin: processPin,
+            scrub: 0.45,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
+        });
+
+        cardsToReveal.forEach((card, revealIndex) => {
+          const cardIndex = revealIndex + 3;
+          const firstVisibleCard = processCards[cardIndex - 2];
+
+          processTimeline
+            .to(processTrack, {
+              y: () => -firstVisibleCard.offsetTop,
+              duration: 1,
+              ease: "power2.inOut",
+            })
+            .to(card, {
+              autoAlpha: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.72,
+              ease: "power2.out",
+            }, "<0.16");
+        });
+
+        return () => {
+          gsap.set([...processCards, processTrack], { clearProps: "all" });
+        };
       }, root);
 
       disposeAnimations = () => media.revert();
@@ -436,13 +484,16 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section mist" id="como-funciona">
-          <div className="container">
-            <span className="eyebrow">Como funciona</span>
-            <h2 className="titleLg">Da auditoria ao dinheiro recuperado.</h2>
-            <div className="steps">
+        <section className="section mist processSection" id="como-funciona">
+          <div className="container processPin">
+            <div className="processHeading">
+              <span className="eyebrow">Como funciona</span>
+              <h2 className="titleLg">Da auditoria ao dinheiro recuperado.</h2>
+            </div>
+            <div className="processViewport">
+              <div className="steps processTrack">
               {auditSteps.map((step, index) => (
-                <article className={`step ${step.highlight ? "stepHighlight" : ""}`} key={step.title}>
+                <article className={`step processStep ${step.highlight ? "stepHighlight" : ""}`} key={step.title}>
                   <div className="stepNumber">{String(index + 1).padStart(2, "0")}</div>
                   <div>
                     <h3>{step.title}</h3><p>{step.text}</p>
@@ -452,6 +503,7 @@ export default function Home() {
                   </div>
                 </article>
               ))}
+              </div>
             </div>
           </div>
         </section>
