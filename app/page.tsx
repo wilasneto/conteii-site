@@ -282,7 +282,7 @@ export default function Home() {
           scrollTrigger: {
             trigger: processSection,
             start: "top top",
-            end: () => `+=${cardsToReveal.length * Math.max(window.innerHeight * 0.17, 150) + Math.max(window.innerHeight * 0.45, 320)}`,
+            end: () => `+=${cardsToReveal.length * Math.max(window.innerHeight * 0.17, 150) + Math.max(window.innerHeight * 0.45, 320) - 200}`,
             pin: processPin,
             pinSpacing: true,
             scrub: 0.45,
