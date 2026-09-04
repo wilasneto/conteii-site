@@ -144,7 +144,7 @@ section[id] { scroll-margin-top: 88px; }
   background-repeat: no-repeat;
   color: white;
 }
-.heroGrid { width: 100%; display: grid; grid-template-columns: minmax(0, 760px); }
+.heroGrid { display: grid; grid-template-columns: minmax(0, 760px); }
 .hero h1 { max-width: 730px; margin-bottom: 28px; font-size: clamp(48px, 5.25vw, 76px); line-height: 1.02; letter-spacing: -0.052em; }
 .hero h1 strong { color: var(--orange); }
 .heroCopy { max-width: 690px; color: #c8d0d4; font-size: 20px; }
