@@ -299,7 +299,7 @@ export default function Home() {
           scrollTrigger: {
             trigger: processSection,
             start: "top top",
-            end: () => `+=${Math.max(window.innerHeight * 0.42, 300)}`,
+            end: () => `+=${Math.max(0, 1300 - processPin.offsetHeight)}`,
             pin: processPin,
             pinSpacing: true,
             scrub: 0.45,
