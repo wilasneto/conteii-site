@@ -369,6 +369,96 @@ section[id] { scroll-margin-top: 88px; }
 .groupSign img { width: 180px; margin: 0 auto 22px; }
 .groupSign span { display: block; color: #9aa7ad; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
 
+.groupSection { overflow: visible; }
+.groupBrandHeader { display: flex; justify-content: center; }
+.groupBrandHeader img { width: min(100%, 520px); }
+.brandMarquee {
+  width: 100%;
+  margin-top: 64px;
+  overflow: hidden;
+  padding: 22px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+.brandTrack {
+  width: max-content;
+  display: flex;
+  will-change: transform;
+  animation: brandScroll 56s linear infinite;
+}
+.brandSet { display: flex; align-items: center; gap: 22px; padding-right: 22px; }
+.brandMarquee:hover .brandTrack,
+.brandMarquee:focus-within .brandTrack { animation-play-state: paused; }
+.brandCard {
+  flex: 0 0 230px;
+  width: 230px;
+  height: 126px;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  border: 1px solid rgba(13, 27, 36, .12);
+  border-radius: 20px;
+  background: white;
+  color: var(--ink);
+  box-shadow: 0 9px 26px rgba(13, 27, 36, .06);
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 90ms cubic-bezier(.2, 0, 0, 1), border-color 90ms ease, box-shadow 220ms ease;
+}
+.brandCard:hover,
+.brandCard:focus-visible {
+  z-index: 2;
+  border-color: var(--orange);
+  box-shadow: 0 15px 34px rgba(13, 27, 36, .13);
+  transform: scale(1.08);
+}
+.brandCard img { width: 100%; height: 74px; object-fit: contain; }
+.brandFallback { font-size: var(--type-title-lg); line-height: var(--leading-title-lg); font-weight: 800; text-align: center; }
+
+.brandModalBackdrop {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(5, 22, 32, .78);
+  backdrop-filter: blur(8px);
+  animation: brandBackdropIn 180ms ease-out both;
+}
+.brandModal {
+  position: relative;
+  width: min(100%, 520px);
+  padding: 42px;
+  border-radius: 28px;
+  background: white;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, .32);
+  animation: brandModalIn 340ms cubic-bezier(.05, .7, .1, 1) both;
+}
+.brandModalClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--mist);
+  color: var(--ink);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+.brandModalLogo { height: 112px; display: grid; place-items: center; margin: 8px 0 26px; padding: 18px; border-radius: 18px; background: var(--mist); }
+.brandModalLogo img { max-width: 100%; max-height: 76px; object-fit: contain; }
+.brandModal h2 { margin-bottom: 12px; font-size: var(--type-headline-lg); line-height: var(--leading-headline-lg); }
+.brandModal p { margin-bottom: 26px; color: #56646b; }
+.brandLinkPending { display: block; padding: 14px 16px; border-radius: 12px; background: var(--cream); color: var(--orange-dark); font-size: var(--type-label-lg); line-height: var(--leading-label-lg); font-weight: 700; text-align: center; }
+
+@keyframes brandScroll { to { transform: translateX(-50%); } }
+@keyframes brandBackdropIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes brandModalIn { from { opacity: 0; transform: translateY(22px) scale(.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
 .footer { padding: 72px 0 30px; background: var(--ink); color: white; }
 .footerGrid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 70px; }
 .footerLogo { width: 190px; margin-bottom: 22px; }
@@ -509,6 +599,11 @@ body { font-size: var(--type-body-lg); line-height: var(--leading-body-lg); }
   .reportTop { align-items: flex-start; flex-direction: column; }
   .aboutMark { min-height: 360px; }
   .aboutMark img { width: 230px; }
+  .groupBrandHeader img { width: min(100%, 340px); }
+  .brandMarquee { margin-top: 42px; }
+  .brandCard { flex-basis: 190px; width: 190px; height: 108px; padding: 18px; }
+  .brandCard img { height: 62px; }
+  .brandModal { padding: 36px 24px 28px; border-radius: 22px; }
   .question { font-size: var(--type-display-sm); line-height: var(--leading-display-sm); }
   .faq details p { padding-right: 0; }
   .footerBottom { flex-direction: column; }
@@ -522,4 +617,6 @@ body { font-size: var(--type-body-lg); line-height: var(--leading-body-lg); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+  .brandTrack { animation: none; }
+  .brandMarquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
 }

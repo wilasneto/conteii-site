@@ -26,6 +26,31 @@ type AuditStep = {
   documents?: string[];
 };
 
+type GroupBrand = {
+  name: string;
+  image?: string;
+  description: string;
+  url?: string;
+};
+
+const groupBrands: GroupBrand[] = [
+  { name: "Audittar", image: "/brands/audittar.png", description: "As informações institucionais desta marca serão adicionadas em breve." },
+  { name: "Conte Fácil", image: "/brands/contefacil.png", description: "As informações institucionais desta marca serão adicionadas em breve." },
+  { name: "Cooventures", image: "/brands/cooventures.png", description: "As informações institucionais desta marca serão adicionadas em breve." },
+  { name: "Farmacon", image: "/brands/farmacon.png", description: "Contabilidade exclusiva e especializada em farmácias e drogarias.", url: "https://farmacon.com.br/" },
+  { name: "Farmania", description: "As informações institucionais desta marca serão adicionadas em breve." },
+  { name: "Hub Benefícios", description: "As informações institucionais desta marca serão adicionadas em breve." },
+  { name: "Hub Recebimentos", description: "As informações institucionais desta marca serão adicionadas em breve." },
+  { name: "Integree", image: "/brands/integree.svg", description: "Marca dedicada a pessoas, cultura e desenvolvimento." },
+  { name: "Mercaddo Contábil", image: "/brands/mercaddo.png", description: "As informações institucionais desta marca serão adicionadas em breve." },
+  { name: "Odontto", image: "/brands/odontto.png", description: "As informações institucionais desta marca serão adicionadas em breve." },
+  { name: "Petcount", image: "/brands/petcount.jpg", description: "As informações institucionais desta marca serão adicionadas em breve." },
+  { name: "Pets Contábil", image: "/brands/pets-contabil.png", description: "As informações institucionais desta marca serão adicionadas em breve." },
+  { name: "RX Análises", image: "/brands/rx-analises.png", description: "As informações institucionais desta marca serão adicionadas em breve." },
+  { name: "RX Soluções", image: "/brands/rx-solucoes.png", description: "As informações institucionais desta marca serão adicionadas em breve." },
+  { name: "Vaggou", description: "As informações institucionais desta marca serão adicionadas em breve." },
+];
+
 const auditItems: AuditItem[] = [
   {
     title: "Taxas e condições comerciais",
@@ -192,6 +217,24 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [formStatus, setFormStatus] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [selectedBrand, setSelectedBrand] = useState<GroupBrand | null>(null);
+
+  useEffect(() => {
+    if (!selectedBrand) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setSelectedBrand(null);
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [selectedBrand]);
 
   useEffect(() => {
     const root = pageRef.current;
@@ -727,19 +770,58 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section creamSection" id="grupo-coomarcas">
-          <div className="container groupGrid">
-            <div>
-              <span className="eyebrow">Grupo Coomarcas</span>
-              <h2 className="titleLg">Uma empresa do Grupo Coomarcas</h2>
-              <p className="lead">A Conteii integra o Grupo Coomarcas, um ecossistema empresarial formado por marcas especializadas em diferentes áreas da gestão, inteligência, tecnologia e desenvolvimento de empresas.</p>
-              <h3 className="titleMd">Diferentes especialidades. Uma mesma visão: usar conhecimento, dados e tecnologia para construir empresas melhores.</h3>
-              <span className="button buttonDark nonInteractive">Conheça o Grupo Coomarcas</span>
+        <section className="section creamSection groupSection" id="grupo-coomarcas">
+          <div className="container groupBrandHeader">
+            <img src="/brands/coomarcas.png" alt="Coomarcas" />
+          </div>
+          <div className="brandMarquee" aria-label="Marcas do Grupo Coomarcas">
+            <div className="brandTrack">
+              {[0, 1].map((copyIndex) => (
+                <div className="brandSet" aria-hidden={copyIndex === 1} key={copyIndex}>
+                  {groupBrands.map((brand) => (
+                    <button
+                      className="brandCard"
+                      type="button"
+                      aria-label={`Conhecer ${brand.name}`}
+                      tabIndex={copyIndex === 1 ? -1 : 0}
+                      onClick={() => setSelectedBrand(brand)}
+                      key={`${copyIndex}-${brand.name}`}
+                    >
+                      {brand.image
+                        ? <img src={brand.image} alt="" />
+                        : <span className="brandFallback">{brand.name}</span>}
+                    </button>
+                  ))}
+                </div>
+              ))}
             </div>
-            <div className="groupSign"><div><img src="/symbol-conteii-orange.png" alt="Conteii" /><strong>CONTEII | GRUPO COOMARCAS</strong><span>Uma empresa do Grupo Coomarcas</span></div></div>
           </div>
         </section>
       </main>
+
+      {selectedBrand && (
+        <div className="brandModalBackdrop" onMouseDown={() => setSelectedBrand(null)}>
+          <div
+            className="brandModal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="brand-modal-title"
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            <button className="brandModalClose" type="button" aria-label="Fechar" onClick={() => setSelectedBrand(null)} autoFocus>×</button>
+            <div className="brandModalLogo">
+              {selectedBrand.image
+                ? <img src={selectedBrand.image} alt="" />
+                : <span className="brandFallback">{selectedBrand.name}</span>}
+            </div>
+            <h2 id="brand-modal-title">{selectedBrand.name}</h2>
+            <p>{selectedBrand.description}</p>
+            {selectedBrand.url
+              ? <a className="button" href={selectedBrand.url} target="_blank" rel="noreferrer">Acessar site da marca</a>
+              : <span className="brandLinkPending">Site oficial será adicionado em breve.</span>}
+          </div>
+        </div>
+      )}
 
       <footer className="footer">
         <div className="container">
