@@ -370,15 +370,16 @@ section[id] { scroll-margin-top: 88px; }
 .groupSign span { display: block; color: #9aa7ad; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
 
 .groupSection { overflow: visible; }
-.groupBrandHeader { display: flex; flex-direction: column; align-items: center; text-align: center; }
-.groupBrandHeader .eyebrow { justify-content: center; }
-.groupBrandHeader .titleLg { max-width: 780px; }
-.groupBrandHeader .lead { max-width: 850px; }
-.groupBrandHeader .titleMd { max-width: 900px; margin-top: 12px; }
-.groupBrandHeader img { width: min(100%, 520px); margin-top: 40px; }
+.groupShowcaseGrid { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: 64px; align-items: center; }
+.groupCopy { text-align: left; }
+.groupCopy .titleLg { max-width: 560px; }
+.groupCopy .lead { max-width: 540px; }
+.groupCopy .titleMd { max-width: 560px; margin-top: 28px; }
+.groupBrandPanel { min-width: 0; overflow: hidden; padding: 42px 0 28px; border: 1px solid rgba(13, 27, 36, .12); border-radius: 30px; background: white; box-shadow: 0 18px 46px rgba(13, 27, 36, .08); }
+.coomarcasLogo { width: min(78%, 430px); margin: 0 auto; }
 .brandMarquee {
   width: 100%;
-  margin-top: 64px;
+  margin-top: 38px;
   overflow: hidden;
   padding: 22px 0;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
@@ -557,6 +558,9 @@ body { font-size: var(--type-body-lg); line-height: var(--leading-body-lg); }
   .hero::after { display: none; }
   .orangeSection { background-image: linear-gradient(90deg, rgba(248, 103, 44, 0.58), rgba(248, 103, 44, 0.94)), url("/precision-bg-v2.png"); background-position: 32% center; }
   .heroGrid, .twoCol, .problemTop, .problemBanner, .impactGrid, .distinction, .whyGrid, .aboutGrid, .ctaGrid, .groupGrid { grid-template-columns: 1fr; gap: 44px; }
+  .groupShowcaseGrid { grid-template-columns: 1fr; gap: 44px; }
+  .groupCopy { text-align: left; }
+  .groupCopy .titleLg, .groupCopy .lead, .groupCopy .titleMd { max-width: 760px; }
   .auditGrid, .competenceGrid { grid-template-columns: repeat(2, 1fr); }
   .competence:last-child { grid-column: 1 / -1; }
   .audienceGrid { grid-template-columns: repeat(2, 1fr); }
@@ -603,7 +607,7 @@ body { font-size: var(--type-body-lg); line-height: var(--leading-body-lg); }
   .reportTop { align-items: flex-start; flex-direction: column; }
   .aboutMark { min-height: 360px; }
   .aboutMark img { width: 230px; }
-  .groupBrandHeader img { width: min(100%, 340px); }
+  .coomarcasLogo { width: min(76%, 360px); }
   .brandMarquee { margin-top: 42px; }
   .brandCard { flex-basis: 190px; width: 190px; height: 108px; padding: 18px; }
   .brandCard img { height: 62px; }

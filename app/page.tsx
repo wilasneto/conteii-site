@@ -771,33 +771,37 @@ export default function Home() {
         </section>
 
         <section className="section creamSection groupSection" id="grupo-coomarcas">
-          <div className="container groupBrandHeader">
-            <span className="eyebrow">Grupo Coomarcas</span>
-            <h2 className="titleLg">Uma empresa do Grupo Coomarcas</h2>
-            <p className="lead">A Conteii integra o Grupo Coomarcas, um ecossistema empresarial formado por marcas especializadas em diferentes áreas da gestão, inteligência, tecnologia e desenvolvimento de empresas.</p>
-            <h3 className="titleMd">Diferentes especialidades. Uma mesma visão: usar conhecimento, dados e tecnologia para construir empresas melhores.</h3>
-            <img src="/brands/coomarcas.png" alt="Coomarcas" />
-          </div>
-          <div className="brandMarquee" aria-label="Marcas do Grupo Coomarcas">
-            <div className="brandTrack">
-              {[0, 1].map((copyIndex) => (
-                <div className="brandSet" aria-hidden={copyIndex === 1} key={copyIndex}>
-                  {groupBrands.map((brand) => (
-                    <button
-                      className="brandCard"
-                      type="button"
-                      aria-label={`Conhecer ${brand.name}`}
-                      tabIndex={copyIndex === 1 ? -1 : 0}
-                      onClick={() => setSelectedBrand(brand)}
-                      key={`${copyIndex}-${brand.name}`}
-                    >
-                      {brand.image
-                        ? <img src={brand.image} alt="" />
-                        : <span className="brandFallback">{brand.name}</span>}
-                    </button>
+          <div className="container groupShowcaseGrid">
+            <div className="groupCopy">
+              <span className="eyebrow">Grupo Coomarcas</span>
+              <h2 className="titleLg">Uma empresa do Grupo Coomarcas</h2>
+              <p className="lead">A Conteii integra o Grupo Coomarcas, um ecossistema empresarial formado por marcas especializadas em diferentes áreas da gestão, inteligência, tecnologia e desenvolvimento de empresas.</p>
+              <h3 className="titleMd">Diferentes especialidades. Uma mesma visão: usar conhecimento, dados e tecnologia para construir empresas melhores.</h3>
+            </div>
+            <div className="groupBrandPanel">
+              <img className="coomarcasLogo" src="/brands/coomarcas.png" alt="Coomarcas" />
+              <div className="brandMarquee" aria-label="Marcas do Grupo Coomarcas">
+                <div className="brandTrack">
+                  {[0, 1].map((copyIndex) => (
+                    <div className="brandSet" aria-hidden={copyIndex === 1} key={copyIndex}>
+                      {groupBrands.map((brand) => (
+                        <button
+                          className="brandCard"
+                          type="button"
+                          aria-label={`Conhecer ${brand.name}`}
+                          tabIndex={copyIndex === 1 ? -1 : 0}
+                          onClick={() => setSelectedBrand(brand)}
+                          key={`${copyIndex}-${brand.name}`}
+                        >
+                          {brand.image
+                            ? <img src={brand.image} alt="" />
+                            : <span className="brandFallback">{brand.name}</span>}
+                        </button>
+                      ))}
+                    </div>
                   ))}
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </section>
