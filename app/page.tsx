@@ -399,7 +399,7 @@ export default function Home() {
       <header className="siteHeader">
         <div className="container nav">
           <a href="#inicio" aria-label="Conteii — início" onClick={() => setMenuOpen(false)}>
-            <img className="navLogo" src="/logo-conteii-white.png" alt="Conteii" />
+            <img className="navLogo" src="/logo-conteii-orange-white.png" alt="Conteii" />
           </a>
           <button
             className="menuButton"
