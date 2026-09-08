@@ -779,7 +779,8 @@ export default function Home() {
               <h3 className="titleMd">Diferentes especialidades. Uma mesma visão: usar conhecimento, dados e tecnologia para construir empresas melhores.</h3>
             </div>
             <div className="groupBrandPanel">
-              <img className="coomarcasLogo" src="/brands/coomarcas.png" alt="Coomarcas" />
+              <img className="coomarcasLogo" src="/brands/coomarcas-white.png" alt="Coomarcas" />
+              <div className="brandDivider" aria-hidden="true" />
               <div className="brandMarquee" aria-label="Marcas do Grupo Coomarcas">
                 <div className="brandTrack">
                   {[0, 1].map((copyIndex) => (
