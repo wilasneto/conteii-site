@@ -422,7 +422,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main id="conteudo">
+      <main id="conteudo" className="siteMain">
         <section className="hero" id="inicio">
           <div className="container heroGrid">
             <div>
@@ -441,7 +441,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section" id="problema">
+        <section className="section moduleSection" id="problema">
           <div className="container problemLayout">
             <div className="problemTop">
               <div className="problemIntro">
@@ -467,7 +467,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section mist">
+        <section className="section moduleSection mist">
           <div className="container twoCol">
             <div>
               <span className="eyebrow">O que a Conteii faz</span>
@@ -483,7 +483,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section" id="o-que-auditamos">
+        <section className="section moduleSection" id="o-que-auditamos">
           <div className="container">
             <span className="eyebrow">O que auditamos</span>
             <h2 className="titleLg">Nossa auditoria vai além da conferência de taxas.</h2>
@@ -500,7 +500,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section orangeSection">
+        <section className="section bandSection orangeSection">
           <div className="container impactGrid">
             <div className="impactContent">
               <span className="eyebrow">Precisão antes da recuperação</span>
@@ -539,7 +539,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section darkSection">
+        <section className="section bandSection darkSection">
           <div className="container twoCol alignCenter">
             <div>
               <span className="eyebrow">O relatório Conteii</span>
@@ -557,7 +557,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section creamSection">
+        <section className="section bandSection creamSection">
           <div className="container distinction">
             <div>
               <span className="eyebrow">Uma distinção central</span>
@@ -572,7 +572,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section">
+        <section className="section moduleSection">
           <div className="container repeatContent">
             <div>
               <span className="eyebrow">Uma pequena divergência pode não ser pequena</span>
@@ -585,7 +585,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section darkSection" id="recuperacao">
+        <section className="section bandSection darkSection" id="recuperacao">
           <div className="container twoCol">
             <div>
               <span className="eyebrow">Recuperação</span>
@@ -598,7 +598,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section mist">
+        <section className="section moduleSection mist audienceSection">
           <div className="container">
             <span className="eyebrow">Para quem é a Conteii</span>
             <h2 className="titleLg">Quanto maior sua operação com cartões, maior a quantidade de informações que precisam ser conferidas.</h2>
@@ -608,7 +608,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section">
+        <section className="section moduleSection">
           <div className="container questionBlock">
             <span className="eyebrow">Você não precisa desconfiar da sua adquirente</span>
             <h2 className="titleLg">Auditar não significa acusar.</h2>
@@ -622,7 +622,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section darkSection">
+        <section className="section bandSection darkSection">
           <div className="container">
             <span className="eyebrow">Tecnologia + inteligência financeira + especialidade jurídica</span>
             <h2 className="titleLg">Três competências trabalhando sobre o mesmo problema.</h2>
@@ -630,7 +630,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section">
+        <section className="section moduleSection">
           <div className="container whyGrid">
             <div>
               <span className="eyebrow">Por que Conteii</span>
@@ -641,7 +641,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section mist" id="cases">
+        <section className="section moduleSection mist" id="cases">
           <div className="container">
             <span className="eyebrow">Cases</span>
             <h2 className="titleLg">O que uma auditoria pode encontrar</h2>
@@ -654,7 +654,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section" id="sobre">
+        <section className="section moduleSection" id="sobre">
           <div className="container aboutGrid">
             <div className="aboutMark"><img src="/symbol-conteii-orange.png" alt="Símbolo Conteii" /></div>
             <div>
@@ -667,7 +667,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section darkSection">
+        <section className="section bandSection darkSection">
           <div className="container securityContent">
             <div>
               <span className="eyebrow">Segurança e confidencialidade</span>
@@ -679,7 +679,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section" id="faq">
+        <section className="section moduleSection" id="faq">
           <div className="container">
             <span className="eyebrow">FAQ</span>
             <h2 className="titleLg">Perguntas frequentes</h2>
@@ -693,7 +693,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section ctaFinal" id="contato">
+        <section className="section bandSection ctaFinal" id="contato">
           <div className="container ctaGrid">
             <div>
               <span className="eyebrow">Solicite uma análise</span>
@@ -727,7 +727,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section creamSection" id="grupo-coomarcas">
+        <section className="section bandSection creamSection" id="grupo-coomarcas">
           <div className="container groupGrid">
             <div>
               <span className="eyebrow">Grupo Coomarcas</span>
