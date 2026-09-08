@@ -434,7 +434,7 @@ export default function Home() {
                 <span className="muted">Remuneração vinculada ao êxito da recuperação, conforme contrato.</span>
               </div>
               <div className="heroTags" aria-label="Etapas resumidas">
-                <span>Encontramos.</span><span>Demonstramos.</span><span>Comprovamos.</span><span>E buscamos recuperar.</span>
+                <span>Encontramos.</span><span>Demonstramos.</span><span>Comprovamos.</span><span>Buscamos recuperar.</span>
               </div>
               <p className="heroNote">Você não precisa saber se existe uma divergência. É justamente isso que vamos descobrir.</p>
             </div>
