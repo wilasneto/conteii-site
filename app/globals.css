@@ -370,8 +370,12 @@ section[id] { scroll-margin-top: 88px; }
 .groupSign span { display: block; color: #9aa7ad; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
 
 .groupSection { overflow: visible; }
-.groupBrandHeader { display: flex; justify-content: center; }
-.groupBrandHeader img { width: min(100%, 520px); }
+.groupBrandHeader { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.groupBrandHeader .eyebrow { justify-content: center; }
+.groupBrandHeader .titleLg { max-width: 780px; }
+.groupBrandHeader .lead { max-width: 850px; }
+.groupBrandHeader .titleMd { max-width: 900px; margin-top: 12px; }
+.groupBrandHeader img { width: min(100%, 520px); margin-top: 40px; }
 .brandMarquee {
   width: 100%;
   margin-top: 64px;

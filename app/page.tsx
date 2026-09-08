@@ -772,6 +772,10 @@ export default function Home() {
 
         <section className="section creamSection groupSection" id="grupo-coomarcas">
           <div className="container groupBrandHeader">
+            <span className="eyebrow">Grupo Coomarcas</span>
+            <h2 className="titleLg">Uma empresa do Grupo Coomarcas</h2>
+            <p className="lead">A Conteii integra o Grupo Coomarcas, um ecossistema empresarial formado por marcas especializadas em diferentes áreas da gestão, inteligência, tecnologia e desenvolvimento de empresas.</p>
+            <h3 className="titleMd">Diferentes especialidades. Uma mesma visão: usar conhecimento, dados e tecnologia para construir empresas melhores.</h3>
             <img src="/brands/coomarcas.png" alt="Coomarcas" />
           </div>
           <div className="brandMarquee" aria-label="Marcas do Grupo Coomarcas">
