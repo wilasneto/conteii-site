@@ -263,6 +263,7 @@ export default function Home() {
           ".heroActions > *",
           ".heroTags span",
           ".heroNote",
+          ".heroVisual",
         ];
 
         gsap.set(introTargets, { willChange: "transform, opacity" });
@@ -279,7 +280,8 @@ export default function Home() {
           .from(".heroCopy", { autoAlpha: 0, y: 18, duration: 0.5 }, "-=0.42")
           .from(".heroActions > *", { autoAlpha: 0, y: 14, duration: 0.38, stagger: 0.07 }, "-=0.28")
           .from(".heroTags span", { autoAlpha: 0, y: 10, duration: 0.32, stagger: 0.045 }, "-=0.22")
-          .from(".heroNote", { autoAlpha: 0, y: 10, duration: 0.32 }, "-=0.2");
+          .from(".heroNote", { autoAlpha: 0, y: 10, duration: 0.32 }, "-=0.2")
+          .from(".heroVisual", { autoAlpha: 0, x: 32, scale: 0.98, duration: 0.72 }, "-=0.58");
 
         gsap.utils.toArray<HTMLElement>(".section > .container:not(.processPin)", root).forEach((section) => {
           const items = Array.from(section.children);
@@ -468,7 +470,7 @@ export default function Home() {
       <main id="conteudo">
         <section className="hero" id="inicio">
           <div className="container heroGrid">
-            <div>
+            <div className="heroContent">
               <span className="eyebrow">Auditoria e Recuperação de Recebíveis</span>
               <h1>Sua empresa recebeu <strong>tudo o que deveria receber</strong> das adquirentes nos últimos 5 anos?</h1>
               <p className="heroCopy">A Conteii audita minuciosamente o histórico das operações com cartões da sua empresa para identificar divergências entre o que foi acordado e o que efetivamente aconteceu com seus recebíveis.</p>
@@ -480,6 +482,26 @@ export default function Home() {
                 <span>Encontramos.</span><span>Demonstramos.</span><span>Comprovamos.</span><span>Buscamos recuperar.</span>
               </div>
               <p className="heroNote">Você não precisa saber se existe uma divergência. É justamente isso que vamos descobrir.</p>
+            </div>
+            <div className="heroVisual" aria-label="Profissional analisando uma auditoria de recebíveis">
+              <div className="heroVisualImage" />
+              <div className="heroFloatCard heroFloatCardTop"><strong>Até 5 anos</strong><span>de histórico auditado</span></div>
+              <div className="heroFloatCard heroFloatCardBottom"><strong>Dados organizados</strong><span>para decisões mais claras</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section className="proofSection" aria-label="Diferenciais da auditoria Conteii">
+          <div className="container proofLayout">
+            <div className="proofIntro">
+              <span className="eyebrow">Uma análise completa</span>
+              <h2>O histórico da operação transformado em respostas claras.</h2>
+            </div>
+            <div className="proofGrid">
+              <article><strong>5 anos</strong><span>de operações auditadas</span></article>
+              <article><strong>Múltiplos</strong><span>CNPJs e adquirentes</span></article>
+              <article><strong>Detalhado</strong><span>por ocorrência e período</span></article>
+              <article><strong>No êxito</strong><span>da recuperação</span></article>
             </div>
           </div>
         </section>
@@ -510,7 +532,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section mist">
+        <section className="section mist serviceSection">
           <div className="container twoCol">
             <div>
               <span className="eyebrow">O que a Conteii faz</span>
