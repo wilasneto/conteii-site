@@ -319,6 +319,35 @@ export default function Home() {
           },
         });
 
+        const moneyPath = root.querySelector<HTMLElement>(".moneyPath");
+        const moneyPathProgress = root.querySelector<HTMLElement>(".moneyPathProgress");
+        const problemLayout = root.querySelector<HTMLElement>(".problemLayout");
+
+        if (moneyPath && moneyPathProgress && problemLayout) {
+          const moneySteps = gsap.utils.toArray<HTMLElement>(".moneyStep", moneyPath);
+          const moneyTimeline = gsap.timeline({
+            defaults: { ease: "none" },
+            scrollTrigger: {
+              trigger: problemLayout,
+              start: () => window.innerWidth <= 600 ? "top top+=104" : "top top+=152",
+              end: () => `+=${Math.max(1100, window.innerHeight * 1.35)}`,
+              pin: problemLayout,
+              pinSpacing: true,
+              scrub: 0.45,
+              anticipatePin: 1,
+              invalidateOnRefresh: true,
+            },
+          });
+
+          moneyTimeline
+            .fromTo(moneyPathProgress, { scaleY: 0 }, { scaleY: 1, duration: 1 }, 0)
+            .to(moneySteps, {
+              "--money-dot-color": "#f8672c",
+              duration: 0.08,
+              stagger: { each: 0.105, from: "start" },
+            }, 0.03);
+        }
+
         const removeInteractions = interactive.map((element) => {
           const lift = () => gsap.to(element, { y: -2, scale: 1.012, duration: 0.18, ease: "power2.out", overwrite: "auto" });
           const settle = () => gsap.to(element, { y: 0, scale: 1, duration: 0.24, ease: "power2.out", overwrite: "auto" });
@@ -472,11 +501,11 @@ export default function Home() {
           <div className="container heroGrid">
             <div className="heroContent">
               <span className="eyebrow">Auditoria e Recuperação de Recebíveis</span>
-              <h1>Sua empresa recebeu <strong>tudo o que deveria receber</strong> das adquirentes nos últimos 5 anos?</h1>
+              <h1>Sua empresa recebeu <strong>tudo das adquirentes</strong> nos últimos 5 anos?</h1>
               <p className="heroCopy">A Conteii audita minuciosamente o histórico das operações com cartões da sua empresa para identificar divergências entre o que foi acordado e o que efetivamente aconteceu com seus recebíveis.</p>
               <div className="heroActions">
                 <a className="button" href="#contato">Quero auditar minha empresa</a>
-                <span className="muted">Remuneração vinculada ao êxito da recuperação, conforme contrato.</span>
+                <span className="muted">Remuneração vinculada ao êxito<br />da recuperação, conforme contrato.</span>
               </div>
               <div className="heroTags" aria-label="Etapas resumidas">
                 <span>Encontramos.</span><span>Demonstramos.</span><span>Comprovamos.</span><span>Buscamos recuperar.</span>
@@ -515,6 +544,7 @@ export default function Home() {
                 <p className="lead">Entre uma venda realizada no cartão e o dinheiro chegar à conta da empresa existe uma série de movimentações.</p>
               </div>
               <div className="moneyPath">
+                <span className="moneyPathProgress" aria-hidden="true" />
                 {[
                   ["Venda", "origem"], ["Adquirente", "processamento"], ["Taxas e condições comerciais", "contrato"],
                   ["Agenda de recebíveis", "agenda"], ["Antecipações", "movimentação"], ["Gravames", "ocorrência"],
